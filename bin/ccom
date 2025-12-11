@@ -1,0 +1,10 @@
+#!/bin/bash
+
+temp=${1##*/}; output=${temp%.c}
+
+gcc $1 -o $output $2
+
+if [ -f $output ]; then
+    echo "==== $output being run ===="
+    ./$output
+fi
